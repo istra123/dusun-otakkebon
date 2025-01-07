@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Produk</title>
+    <link rel="stylesheet" href="tambah-styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="image/profil.jpg" alt="Logo Dusun Otak Kebon" class="logo">
+        <h1>Tambah Produk</h1>
+        <form id="upload-product-form" enctype="multipart/form-data">
+            <label for="whatsapp">No WhatsApp:</label>
+            <input type="text" id="whatsapp" name="whatsapp" required>
+            <label for="product-photo">Upload Foto:</label>
+            <input type="file" id="product-photo" name="photo" accept="image/*" required>
+            <button type="submit">Tambah Produk</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('upload-product-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            const fileField = document.getElementById('product-photo');
+            const whatsappField = document.getElementById('whatsapp');
+
+            formData.append('photo', fileField.files[0]);
+            formData.append('whatsapp', whatsappField.value);
+
+            fetch('http://localhost:3000/upload-product', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Upload failed');
+                }
+            })
+            .then(data => {
+                alert(data);
+                window.location.href = 'admin.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat mengupload produk.');
+            });
+        });
+    </script>
+</body>
+</html>

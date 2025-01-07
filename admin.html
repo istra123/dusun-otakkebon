@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dusun Otak Kebon</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <header>
+        <img src="image/logo2.png" alt="Persatuan Pemuda Otak Kebon" class="logo">
+        <h1>Dusun Otak Kebon</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html" class="nav-link active">Profil</a>
+                    <div class="dropdown-content">
+                        <a href="#home">Profil</a>
+                        <a href="#home">Sejarah</a>
+                        <a href="#home">Struktur Organisasi</a>
+                    </div>
+                </li>
+                <li><a href="#home">Layanan</a></li>
+                <li><a href="#home">Data Dusun</a></li>
+                <li><a href="#home">Peta Dusun</a></li>
+                <li><a href="#profil">Berita</a></li>
+                <li><a href="#products">Potensi Dusun</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Wilayah Dusun</h2>
+            <div id="photo-container"></div>
+            <button class="add-photo">Tambah Photo Wilayah</button>
+        </section>
+        <section id="profile">
+            <h2>Berita Dusun</h2>
+            <textarea id="dusun-info" rows="5"></textarea>
+            <button class="edit-button">Simpan</button>
+        </section>
+        <section id="products">
+            <h2>Potensi Wilayah</h2>
+            <div id="product-container"></div>
+            <button class="add-product">Tambah Potensi</button>
+        </section>
+    </main>
+    <footer>
+        <p>Alamat: Jl. Gawar Gong, Lombok Timur, kca Wanasaba, Desa Beririjarak Dusun Otak Kebon</p>
+        <p>Email: otakkebon@gmail.com</p>
+        <p>Telepon: 085955343586</p>
+        <p>&copy; 2021 Sistem Informasi Dusun Otak Kebon. Semua Hak Dilindungi.</p>
+    </footer>
+    <script src="admin-scripts.js"></script>
+</body>
+</html>

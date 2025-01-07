@@ -1,0 +1,199 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    background-image: url('image/foto2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #61b7f0;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+header h1 {
+    display: inline;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid #fff;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #4CAF50;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #45a049;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1em;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-bottom: 0.5em;
+}
+
+.photo, .product {
+    display: inline-block;
+    width: 30%;
+    margin: 1em;
+    text-align: center;
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.photo img, .product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#map {
+    height: 100px;
+    width: 50%;
+    margin-top: 1em;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Ini akan memastikan foto yang tidak muat di satu baris akan pindah ke baris berikutnya */
+    gap: 10px; /* Ini akan memberikan jarak antar foto */
+}
+
+.photo-gallery img {
+    max-width: 200px; /* Sesuaikan lebar maksimum foto */
+    height: auto;
+}
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Ini memastikan foto yang tidak muat di satu baris akan pindah ke baris berikutnya */
+    gap: 10px; /* Ini memberikan jarak antar foto */
+}
+
+.photo-gallery div {
+    display: flex;
+    flex-direction: column; /* Ini memastikan tombol berada di bawah gambar */
+    align-items: center; /* Untuk memusatkan tombol di bawah gambar */
+    margin-bottom: 10px; /* Berikan jarak antar elemen dalam galeri */
+}
+
+.photo-gallery img {
+    max-width: 200px; /* Sesuaikan lebar maksimum foto */
+    height: auto;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px; /* Berikan jarak antara gambar dan tombol */
+}

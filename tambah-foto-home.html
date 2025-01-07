@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Foto Wilayah</title>
+    <link rel="stylesheet" href="tambah-styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="image/profil.jpg" alt="Logo Dusun Otak Kebon" class="logo">
+        <h1>Tambah Foto Wilayah</h1>
+        <form id="upload-region-form" enctype="multipart/form-data">
+            <label for="name">Nama Wilayah:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="region-photo">Upload Foto:</label>
+            <input type="file" id="region-photo" name="photo" accept="image/*" required>
+            <button type="submit">Tambah Foto</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('upload-region-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            const fileField = document.getElementById('region-photo');
+            const nameField = document.getElementById('name');
+
+            formData.append('photo', fileField.files[0]);
+            formData.append('name', nameField.value);
+
+            fetch('http://localhost:3000/upload-region', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Upload failed');
+                }
+            })
+            .then(data => {
+                alert(data);
+                window.location.href = 'admin.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat mengupload foto.');
+            });
+        });
+    </script>
+</body>
+</html>
